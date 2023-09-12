@@ -1,0 +1,5 @@
+<%= turbo_stream.remove(@comment) %>
+
+<%= turbo_stream.replace(dom_id(@post, :comments_count)) do %>
+  <%= render "posts/comments_count", post: @post %>
+<% end %>

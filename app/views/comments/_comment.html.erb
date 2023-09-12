@@ -1,0 +1,13 @@
+<div class="py-4 border-b" id="<%= dom_id(comment) %>">
+  <div class="flex space-x-3 items-start">
+    <div class="flex-shrink-0">
+      <%= profile_image(comment.user) %>
+    </div>
+    <div class="flex-1">
+      <p class="font-bold"><%= link_to comment.user.username, profile_path(comment.user), class: "hover:underline", data: {turbo: false} %></p>
+      <div class="prose prose-lg"><%= comment.body %></div>
+
+      <%= render "comments/controls", comment: comment %>
+    </div>
+  </div>
+</div>

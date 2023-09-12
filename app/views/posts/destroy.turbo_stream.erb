@@ -1,0 +1,7 @@
+<%= turbo_stream.remove(@post) %>
+
+<% unless Post.all.any? %>
+  <%= turbo_stream.update "empty-posts" do %>
+    <%= render "posts/empty_posts" %>
+  <% end %>
+<% end %>
